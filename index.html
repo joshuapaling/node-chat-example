@@ -20,25 +20,6 @@
   </form>
   <script src="/socket.io/socket.io.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-  <script>
-    var socket = io();
-    $('form').submit(function () {
-      socket.emit('chat message', $('#m').val());
-      $('#m').val('');
-      return false;
-    });
-
-    socket.on('user connected', function(){
-      $('#messages').append('<li>' + '* a user connected *' + '</li>');
-    });
-
-    socket.on('user disconnected', function(){
-      $('#messages').append('<li>' + '* a user disconnected *' + '</li>');
-    });
-
-    socket.on('chat message', function(msg){
-      $('#messages').append('<li>' + msg + '</li>');
-    });
-  </script>
+  <script src="/client.js"></script>
 </body>
 </html>
